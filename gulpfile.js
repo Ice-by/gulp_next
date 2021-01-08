@@ -99,10 +99,10 @@ exports.scripts = scripts;
 // Для запуска сжатия картинок (запускается вручную):
 exports.images = images;
 // Для запуска очистки старых файлов перед заливкой новых:
-exports.cleabDist = cleabDist;
+exports.cleanDist = cleanDist;
 
 // Для создания билда на заливкуЮ причем с очередностью сначала очистили, потом картинки минифицировали и потом уже с минифицированными картинками только заливаем:
-exports.build = series(cleabDist, images, build);
+exports.build = series(cleanDist, images, build);
 
 // Чтобы параллельно работали browserSync и watching:
 exports.default = parallel(styles, scripts, browsersync, watching);
